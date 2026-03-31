@@ -11,12 +11,12 @@ const api = axios.create({
   },
 });
 
-export interface MoviehResponse {
+export interface MoviesResponse {
   results: Movie[];
 }
 
 export default async function fetchMovies(query: string): Promise<Movie[]> {
-  const response = await api.get<MoviehResponse>('/search/movie', {
+  const response = await api.get<MoviesResponse>('/search/movie', {
     params: {
       query: query,
     },
